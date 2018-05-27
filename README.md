@@ -1,0 +1,44 @@
+# eslint-plugin-bam
+
+[BAM](https://www.bam.tech/)'s Eslint plugin, inspired from our learning on [React](https://reactjs.org/) and [React-Native](https://facebook.github.io/react-native/) projects.
+
+## Installation
+
+You'll first need to install [ESLint](http://eslint.org):
+
+```
+$ yarn add eslint --dev
+```
+
+Next, install `eslint-plugin-bam`:
+
+```
+$ yarn add eslint-plugin-bam --dev
+```
+
+**Note:** If you installed ESLint globally (using `global`) then you must also install `eslint-plugin-bam` globally.
+
+## Usage
+
+Add `bam` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+
+```json
+{
+  "plugins": ["bam"]
+}
+```
+
+Then configure the rules you want to use under the rules section.
+
+```json
+{
+  "rules": {
+    "bam/no-react-uncast-to-boolean": "warning"
+  }
+}
+```
+
+## Supported Rules
+
+- `no-react-unbound`
+- `no-react-uncast-to-boolean`
