@@ -28,13 +28,23 @@ Add `bam` to the plugins section of your `.eslintrc` configuration file. You can
 }
 ```
 
-Then configure the rules you want to use under the rules section.
+Then either
+
+- configure the rules you want to use under the rules section:
 
 ```json
 {
   "rules": {
-    "bam/no-react-uncast-to-boolean": "warning"
+    "bam/no-react-unbound": "error",
+    "bam/no-react-uncast-to-boolean": "error"
   }
+}
+```
+
+- or use the the recommended rule set:
+```json
+{
+  "extends": ["plugin:bam/recommended"],
 }
 ```
 
