@@ -2,14 +2,14 @@
  * @fileoverview Prevent usage of uncast value in react JSX
  * @author pierrelouislp
  */
-'use strict';
+"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require('../../../lib/rules/no-react-uncast-to-boolean'),
-  RuleTester = require('eslint').RuleTester;
+var RuleTester = require("eslint").RuleTester;
+var rule = require("../../../lib/rules/no-react-uncast-to-boolean");
 
 //------------------------------------------------------------------------------
 // Tests
@@ -17,30 +17,28 @@ var rule = require('../../../lib/rules/no-react-uncast-to-boolean'),
 
 const parserOptions = {
   ecmaVersion: 8,
-  sourceType: 'module',
+  sourceType: "module",
   ecmaFeatures: {
     experimentalObjectRestSpread: true,
-    jsx: true,
-  },
+    jsx: true
+  }
 };
 
-require('babel-eslint');
+require("babel-eslint");
 
 var ruleTester = new RuleTester({ parserOptions });
-ruleTester.run('no-react-uncast-to-boolean', rule, {
-  valid: [
-    '<View>{this.props.textMaybeEmpty ? <Text>{this.props.textMaybeEmpty}</Text> : null}</View> ',
-  ],
+ruleTester.run("no-react-uncast-to-boolean", rule, {
+  valid: ["<View>{this.props.textMaybeEmpty ? <Text>{this.props.textMaybeEmpty}</Text> : null}</View> "],
 
   invalid: [
     {
-      code: 'textMaybeEmpty && <Text>{this.props.textMaybeEmpty}</Text>',
+      code: "textMaybeEmpty && <Text>{this.props.textMaybeEmpty}</Text>",
       errors: [
         {
-          message: 'Use ternary instead !',
-          type: 'ExpressionStatement',
-        },
-      ],
-    },
-  ],
+          message: "Use ternary instead !",
+          type: "ExpressionStatement"
+        }
+      ]
+    }
+  ]
 });

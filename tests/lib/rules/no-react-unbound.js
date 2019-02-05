@@ -2,26 +2,26 @@
  * @fileoverview Prevent using unbound class method as callback of a JSX
  * @author AmauryLiet
  */
-'use strict';
+"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require('../../../lib/rules/no-react-unbound'),
-  RuleTester = require('eslint').RuleTester;
+var RuleTester = require("eslint").RuleTester;
+var rule = require("../../../lib/rules/no-react-unbound");
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 const options = {
-  parser: 'babel-eslint',
+  parser: "babel-eslint"
 };
 
-require('babel-eslint');
+require("babel-eslint");
 
 var ruleTester = new RuleTester(options);
-ruleTester.run('no-react-unbound', rule, {
+ruleTester.run("no-react-unbound", rule, {
   valid: [
     `
 import * as React from "react";
@@ -82,7 +82,7 @@ class MyComponent extends React.Component {
     return <div
       value={this.getValue()}
     /> }
-}`,
+}`
   ],
 
   invalid: [
@@ -100,10 +100,10 @@ class MyComponent extends React.Component {
 }`,
       errors: [
         {
-          message: 'Please bind your function',
-          type: 'MethodDefinition',
-        },
-      ],
+          message: "Please bind your function",
+          type: "MethodDefinition"
+        }
+      ]
     },
     {
       code: `
@@ -122,9 +122,9 @@ class MyComponent extends React.Component {
 }`,
       errors: [
         {
-          message: 'Please bind your function',
-        },
-      ],
+          message: "Please bind your function"
+        }
+      ]
     },
     {
       code: `
@@ -143,9 +143,9 @@ class MyComponent extends React.Component {
 }`,
       errors: [
         {
-          message: 'Please bind your function',
-        },
-      ],
-    },
-  ],
+          message: "Please bind your function"
+        }
+      ]
+    }
+  ]
 });
