@@ -36,7 +36,9 @@ Then either
 {
   "rules": {
     "bam/no-react-unbound": "error",
-    "bam/no-react-uncast-to-boolean": "error"
+    "bam/no-react-uncast-to-boolean": "error",
+    "bam/react-only-native-animation": "error",
+    "bam/no-new-date": "error"
   }
 }
 ```
@@ -52,3 +54,5 @@ Then either
 
 - `no-react-unbound`
 - `no-react-uncast-to-boolean`
+- `react-only-native-animation`
+- `no-new-date`
