@@ -14,12 +14,13 @@
   "author": "AmauryLiet",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha tests --recursive"
+    "test": "nyc --check-coverage --lines 100 --functions 100 --branches 100 mocha tests --recursive"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
     "eslint": "~4.19.1",
-    "mocha": "^5.1.1"
+    "mocha": "^5.1.1",
+    "nyc": "^13.2.0"
   },
   "engines": {
     "node": ">=0.10.0"
