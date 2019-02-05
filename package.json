@@ -14,13 +14,15 @@
   "author": "AmauryLiet",
   "main": "lib/index.js",
   "scripts": {
-    "test": "nyc --check-coverage --lines 100 --functions 100 --branches 100 mocha tests --recursive"
+    "test": "eslint lib tests && nyc --check-coverage --lines 100 --functions 100 --branches 100 mocha tests --recursive"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
     "eslint": "~4.19.1",
+    "eslint-config-bambi": "^1.4.0",
     "mocha": "^5.1.1",
-    "nyc": "^13.2.0"
+    "nyc": "^13.2.0",
+    "prettier": "^1.16.4"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -28,6 +30,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/bamlab/eslint-plugin-bam.git"
+  },
+  "eslintConfig": {
+    "extends": "bambi/node"
   },
   "bugs": {
     "url": "https://github.com/bamlab/eslint-plugin-bam/issues"
