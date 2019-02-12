@@ -21,6 +21,8 @@ const parserOptions = {
 
 require("babel-eslint");
 
+const potentialCrashIgnored = `Animated.event([{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }], "not an object");`;
+
 var ruleTester = new RuleTester({ parserOptions });
 ruleTester.run("react-only-native-animation", rule, {
   valid: [
@@ -28,7 +30,8 @@ ruleTester.run("react-only-native-animation", rule, {
     useNativeDriver: true,
     listener: onScroll
   });`,
-    `Animated.timing()`
+    `Animated.timing()`,
+    potentialCrashIgnored
   ],
 
   invalid: [
@@ -63,15 +66,6 @@ ruleTester.run("react-only-native-animation", rule, {
         {
           message:
             "Please use the native driver for your animation for performance purposes. See https://facebook.github.io/react-native/blog/2017/02/14/using-native-driver-for-animated",
-          type: "ExpressionStatement"
-        }
-      ]
-    },
-    {
-      code: `Animated.event([{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }], "not an object");`,
-      errors: [
-        {
-          message: "Second argument of Animated.event should be an object",
           type: "ExpressionStatement"
         }
       ]
