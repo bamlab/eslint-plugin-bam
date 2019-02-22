@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-bam",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "BAM eslint plugin, aiming to improve code quality of react & react native applications.",
   "keywords": [
     "eslint",
