@@ -24,7 +24,8 @@
     "mocha": "^5.1.1",
     "nyc": "^13.2.0",
     "prettier": "^1.16.4",
-    "semantic-release": "^15.13.16"
+    "semantic-release": "^15.13.16",
+    "travis-deploy-once": "^5.0.1"
   },
   "engines": {
     "node": ">=0.10.0"
