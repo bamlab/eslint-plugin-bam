@@ -15,7 +15,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "eslint lib tests && nyc --check-coverage --lines 100 --functions 100 --branches 100 mocha tests --recursive",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
