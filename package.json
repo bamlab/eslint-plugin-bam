@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-bam",
-  "version": "1.2.0",
+  "version": "0.0.0-development",
   "description": "BAM eslint plugin, aiming to improve code quality of react & react native applications.",
   "keywords": [
     "eslint",
@@ -14,7 +14,9 @@
   "author": "AmauryLiet",
   "main": "lib/index.js",
   "scripts": {
-    "test": "eslint lib tests && nyc --check-coverage --lines 100 --functions 100 --branches 100 mocha tests --recursive"
+    "test": "eslint lib tests && nyc --check-coverage --lines 100 --functions 100 --branches 100 mocha tests --recursive",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
@@ -22,7 +24,9 @@
     "eslint-config-bambi": "^1.4.0",
     "mocha": "^5.1.1",
     "nyc": "^13.2.0",
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "semantic-release": "^15.13.16",
+    "travis-deploy-once": "^5.0.1"
   },
   "engines": {
     "node": ">=0.10.0"
