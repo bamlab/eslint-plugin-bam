@@ -18,9 +18,12 @@
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once"
   },
+  "peerDependencies": {
+    "eslint": "^6.0.1"
+  },
   "devDependencies": {
-    "babel-eslint": "^8.2.3",
-    "eslint": "~4.19.1",
+    "babel-eslint": "^10.0.2",
+    "eslint": "~6.0.1",
     "eslint-config-bambi": "^1.4.0",
     "mocha": "^5.1.1",
     "nyc": "^13.2.0",
